@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<ul>
+		<li><a href="http://kubsu.ru">абсолютная гиперссылска на кубик</a></li>
+		<li><a href="https://kubsu.ru">https гиперссылска на кубик</a></li>
+		<li><a href=""><img src="ast/image.jpg" alt="image" width="200px"
+		></a></li>
+		<li><a href="/vnutr.html">внутренняя страница</a></li>
+		<li><a href="/">главная страница</a></li>
+		<li><a href="#fragmmeent">фрагмент вроде</a></li>
+		<li><a href="?name=Тёма&cool=True&age=18534">ссылка с 3 параметрами</a></li>
+		<li><a href="?id=52">ссылка с id</a></li>
+		<li><a href="./vnutr.html">относительная ссылка в текущем каталоге
+		</a></li>
+		<li><a href="./about/vnutr.html">относительная ссылка в каталоге about
+		</a></li>
+		<li><a href="../vnutr.html">относительную на страницу в каталоге уровнем выше текущего
+		</a></li>
+		<li><a href="../../vnutr.html">относительную на страницу в каталоге двумя уровнями выше
+		</a></li>
+		<li><p>Добро пожаловать на русскоязычный ресурс Dark Souls вики!
+        Мы надеемся, что наша вики станет вашим надёжным проводником в мире <a href="/vnutr.html">тёмных душ.
+        <li><a href="https://en.wikipedia.org/wiki/Dark_Souls#Dark_Souls:~:text=Toggle%20Games%20subsection-,Dark%20Souls,-Dark%20Souls%20II">ссылка на фрагмент страницы стороннего сайта;</a></li>
+        <li><img src="ast/image.jpg" usemap="#plant" width="200px">
+
+        <map name="plant">
+        <area shape="rect" coords="0,0,82,126" href="https://kubsu.ru">
+        <area shape="circle" coords="129,161,129" href="https://kubsu.ru">
+        <area shape="poly" coords="200,32,240,32,240,42,210,64,210,74,200,32" href="https://kubsu.com" >
+        </map></li>
+
+        <li><a href="">ссылка с пустым href</a></li>
+        <li><a >ссылка без href</a></li>
+        <li><a href="https://kubsu.ru" rel="nofollow">ссылка, по которой запрещен переход поисковикам</a></li>
+        <li><no-index><a href="https://kubsu.ru">запрещенная для индексации поисковиками</a></no-index></li>
+        <ol>
+        	<li><a href="https://kubsu.ru" title="крутой сайтик"> сайт</a></li>
+        	<li><a href="https://kubsu.ru" title="еще один крутой сайтик"> другой сайт</a></li>
+        </ol>
+        <li><a href="ftp://admin:1234@google.com/index.doc">ссылка на файл с протоколом ftp </a></li>
+        <form>
+        <label for="">
+            ФИО
+            <input name="fio" type="text" >
+        </label>
+        <label for="">
+            Телефон
+            <input name="phone" type="tel">
+        </label>
+        <label for="">
+            Email
+            <input name="email" type="email">
+        </label>
+        <label for="">
+            Дата рождения
+            <input name="date" type="date">
+        </label>
+        <label for="">
+            Пол
+            <input name="pol" type="radio">
+        </label>
+        <label for="">
+            Любимый язык программирования
+            <select name="lang" id="">
+                <option value="1">Pascal</option>
+                <option value="2">C</option>
+                <option value="3">C++</option>
+                <option value="4">JavaScript</option>
+                <option value="5">PHP</option>
+                <option value="6">Python</option>
+                <option value="7">Java</option>
+                <option value="8">Haskel</option>
+                <option value="9">Clojure</option>
+                <option value="10">Prolog</option>
+                <option value="11">Scala</option>
+            </select>
+        </label>
+        <label for="">
+            Биография
+            <textarea name="biography" id="#textarea"></textarea>
+        </label>
+        <label for="">
+            С контрактом ознакомлен
+            <input type="checkbox">
+        </label>
+        <button type="submit">Сохранить</button>
+    </form>
+	</ul>
+</body>
+</html>
