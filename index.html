@@ -1,16 +1,17 @@
 <!DOCTYPE html>
+
 <html lang="ru">
 <head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>WEB</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEB</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <div class="header">
             <div class="logo">
-                <img src="logo.png" width="65px">
+                <img src="logo.png" width="65" alt="Логотип">
                 <p class="logo-title">onigiri-basic.github.io</p>
             </div>
             <nav class="navbar">
@@ -21,149 +22,140 @@
                 </ul>
             </nav>
         </div>
-
     </header>
-    <main>
-        <div class="container">
-		<li><a href="http://kubsu.ru">абсолютная гиперссылска на кубик</a></li>
-		<li><a href="https://kubsu.ru">https гиперссылска на кубик</a></li>
-		<li><a href=""><img src="image.jpg" alt="image" width="200px"
-		></a></li>
-		<li><a href="/vnutr.html">внутренняя страница</a></li>
-		<li><a href="/">главная страница</a></li>
-		<li><a href="#fragmmeent">фрагмент вроде</a></li>
-		<li><a href="?name=Тёма&cool=True&age=18534">ссылка с 3 параметрами</a></li>
-		<li><a href="?id=52">ссылка с id</a></li>
-		<li><a href="./vnutr.html">относительная ссылка в текущем каталоге
-		</a></li>
-		<li><a href="./about/vnutr.html">относительная ссылка в каталоге about
-		</a></li>
-		<li><a href="../vnutr.html">относительную на страницу в каталоге уровнем выше текущего
-		</a></li>
-		<li><a href="../../vnutr.html">относительную на страницу в каталоге двумя уровнями выше
-		</a></li>
-		<li><p>Добро пожаловать на русскоязычный ресурс Dark Souls вики!
-        Мы надеемся, что наша вики станет вашим надёжным проводником в мире <a href="/vnutr.html">тёмных душ.
-        <li><a href="https://en.wikipedia.org/wiki/Dark_Souls#Dark_Souls:~:text=Toggle%20Games%20subsection-,Dark%20Souls,-Dark%20Souls%20II">ссылка на фрагмент страницы стороннего сайта;</a></li>
-        <li><img src="image.jpg" usemap="#plant" width="200px">
 
-        <map name="plant">
-        <area shape="rect" coords="0,0,82,126" href="https://kubsu.ru">
-        <area shape="circle" coords="129,161,129" href="https://kubsu.ru">
-        <area shape="poly" coords="200,32,240,32,240,42,210,64,210,74,200,32" href="https://kubsu.com" >
-        </map></li>
-
-        <li><a href="">ссылка с пустым href</a></li>
-        <li><a >ссылка без href</a></li>
-        <li><a href="https://kubsu.ru" rel="nofollow">ссылка, по которой запрещен переход поисковикам</a></li>
-        <li><no-index><a href="https://kubsu.ru">запрещенная для индексации поисковиками</a></no-index></li>
-        <ol>
-        	<li><a href="https://kubsu.ru" title="крутой сайтик"> сайт</a></li>
-        	<li><a href="https://kubsu.ru" title="еще один крутой сайтик"> другой сайт</a></li>
-        </ol>
-        <li><a href="ftp://admin:1234@google.com/index.doc">ссылка на файл с протоколом ftp </a></li>
+```
+<main class="main">
+    <!-- Таблица -->
+    <div class="table-container">
         <h2 class="text-tabl">Таблица</h2>
-            <table border="1">
-                <thead>
-                    <tr>
-                        <td class = "tab">Level 1</td>
-                        <td>Level 2</td>
-                        <td class = "tab">Level 3</td>
-                        <td>Level 4</td>
-                        <td class = "tab">Level 5</td>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class = "tab" rowspan="6">blue</td>
-                        <td rowspan="3">test</td>
-                        <td class = "tab" rowspan="3">blue</td>
-                        <td>test</td>
-                        <td class = "tab"> blue</td>
-                    </tr>
-                    <tr>
-                        <td>test</td>
-                        <td class = "tab">blue</td>
-                    </tr>
-                    <tr>
-                        <td>test</td>
-                        <td class = "tab">blue</td>
-                    </tr>
-                    <tr>
-                        <td>test</td>
-                        <td class = "tab">blue</td>
-                        <td>test</td>
-                        <td class = "tab">blue</td>
-                    </tr>
-                    <tr>
-                        <td rowspan="2">test</td>
-                        <td class = "tab" rowspan="2">blue</td>
-                        <td>test</td>
-                        <td class = "tab">blue</td>
-                    </tr>
-                    <tr>
-                        <td>test</td>
-                        <td class = "tab">blue</td>
-                    </tr>
-                </tbody>
-            </table>
-        <form>
-        <label for="">
-            ФИО
-            <input name="fio" type="text" >
-        </label>
-        <label for="">
-            Телефон
-            <input name="phone" type="tel">
-        </label>
-        <label for="">
-            Email
-            <input name="email" type="email">
-        </label>
-        <label for="">
-            Дата рождения
-            <input name="date" type="date">
-        </label>
-        <li>Пол:</li>
-        <label for="male">Мужской</label>
-        <input type="radio" id="male" name="gender" value="male" checked><br>
-
-        <label for="female">Женский</label>
-        <input type="radio" id="female" name="gender" value="female"><br>
-
-        
-        </label>
-        <label for="">
-            Любимый язык программирования
-            <select name="lang" id="">
-                <option value="1">Pascal</option>
-                <option value="2">C</option>
-                <option value="3">C++</option>
-                <option value="4">JavaScript</option>
-                <option value="5">PHP</option>
-                <option value="6">Python</option>
-                <option value="7">Java</option>
-                <option value="8">Haskel</option>
-                <option value="9">Clojure</option>
-                <option value="10">Prolog</option>
-                <option value="11">Scala</option>
-            </select>
-        </label>
-        <label for="">
-            Биография
-            <textarea name="biography" id="#textarea"></textarea>
-        </label>
-        <label for="">
-            С контрактом ознакомлен
-            <input type="checkbox">
-        </label>
-        <button type="submit">Сохранить</button>
-    </form>
-	</ul>
+        <table>
+            <thead>
+                <tr>
+                    <td class="tab">Level 1</td>
+                    <td>Level 2</td>
+                    <td class="tab">Level 3</td>
+                    <td>Level 4</td>
+                    <td class="tab">Level 5</td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="tab" rowspan="6">blue</td>
+                    <td rowspan="3">test</td>
+                    <td class="tab" rowspan="3">blue</td>
+                    <td>test</td>
+                    <td class="tab">blue</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td class="tab">blue</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td class="tab">blue</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td class="tab">blue</td>
+                    <td>test</td>
+                    <td class="tab">blue</td>
+                </tr>
+                <tr>
+                    <td rowspan="2">test</td>
+                    <td class="tab" rowspan="2">blue</td>
+                    <td>test</td>
+                    <td class="tab">blue</td>
+                </tr>
+                <tr>
+                    <td>test</td>
+                    <td class="tab">blue</td>
+                </tr>
+            </tbody>
+        </table>
     </div>
-    </main>
-    <footer>
-        (&copy;) Артём Козловский
-    </footer>
+
+    <!-- Ссылки -->
+    <div class="links">
+        <h2>Список гиперссылок</h2>
+        <ul class="hyperlinks">
+            <li><a href="http://kubsu.ru">абсолютная гиперссылка на кубик</a></li>
+            <li><a href="https://kubsu.ru">https гиперссылка на кубик</a></li>
+            <li><a href=""><img src="image.jpg" alt="image" width="200"></a></li>
+            <li><a href="/vnutr.html">внутренняя страница</a></li>
+            <li><a href="/">главная страница</a></li>
+            <li><a href="#fragmmeent">фрагмент вроде</a></li>
+            <li><a href="?name=Тёма&cool=True&age=18534">ссылка с 3 параметрами</a></li>
+            <li><a href="?id=52">ссылка с id</a></li>
+            <li><a href="./vnutr.html">относительная ссылка в текущем каталоге</a></li>
+            <li><a href="./about/vnutr.html">относительная ссылка в каталоге about</a></li>
+            <li><a href="../vnutr.html">ссылка уровнем выше</a></li>
+            <li><a href="../../vnutr.html">ссылка двумя уровнями выше</a></li>
+            <li>Добро пожаловать на русскоязычный ресурс Dark Souls вики! 
+                <a href="/vnutr.html">тёмных душ</a>
+            </li>
+            <li><a href="https://en.wikipedia.org/wiki/Dark_Souls#Dark_Souls:~:text=Toggle%20Games%20subsection-,Dark%20Souls,-Dark%20Souls%20II">ссылка на фрагмент стороннего сайта</a></li>
+            <li><img src="image.jpg" usemap="#plant" width="200">
+                <map name="plant">
+                    <area shape="rect" coords="0,0,82,126" href="https://kubsu.ru">
+                    <area shape="circle" coords="129,161,129" href="https://kubsu.ru">
+                    <area shape="poly" coords="200,32,240,32,240,42,210,64,210,74,200,32" href="https://kubsu.com">
+                </map>
+            </li>
+            <li><a href="">ссылка с пустым href</a></li>
+            <li><a>ссылка без href</a></li>
+            <li><a href="https://kubsu.ru" rel="nofollow">ссылка с nofollow</a></li>
+            <li><no-index><a href="https://kubsu.ru">запрещённая для индексации</a></no-index></li>
+            <ol>
+                <li><a href="https://kubsu.ru" title="крутой сайтик">сайт</a></li>
+                <li><a href="https://kubsu.ru" title="ещё один сайтик">другой сайт</a></li>
+            </ol>
+            <li><a href="ftp://admin:1234@google.com/index.doc">ссылка на FTP файл</a></li>
+        </ul>
+    </div>
+
+    <!-- Форма -->
+    <div class="form">
+        <h2>Форма</h2>
+        <form>
+            <label>ФИО <input name="fio" type="text"></label>
+            <label>Телефон <input name="phone" type="tel"></label>
+            <label>Email <input name="email" type="email"></label>
+            <label>Дата рождения <input name="date" type="date"></label>
+            
+            <p>Пол:</p>
+            <label for="male">Мужской</label>
+            <input type="radio" id="male" name="gender" value="male" checked>
+            <label for="female">Женский</label>
+            <input type="radio" id="female" name="gender" value="female"><br>
+
+            <label>Любимый язык программирования
+                <select name="lang">
+                    <option value="1">Pascal</option>
+                    <option value="2">C</option>
+                    <option value="3">C++</option>
+                    <option value="4">JavaScript</option>
+                    <option value="5">PHP</option>
+                    <option value="6">Python</option>
+                    <option value="7">Java</option>
+                    <option value="8">Haskel</option>
+                    <option value="9">Clojure</option>
+                    <option value="10">Prolog</option>
+                    <option value="11">Scala</option>
+                </select>
+            </label>
+
+            <label>Биография <textarea name="biography"></textarea></label>
+            <label><input type="checkbox"> С контрактом ознакомлен</label>
+            <button type="submit">Сохранить</button>
+        </form>
+    </div>
+</main>
+
+<footer>
+    &copy; Артём Козловский
+</footer>
+```
+
 </body>
 </html>
