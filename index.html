@@ -84,7 +84,7 @@
             <li><a href=""><img src="image.jpg" alt="image" width="200"></a></li>
             <li><a href="/vnutr.html">внутренняя страница</a></li>
             <li><a href="/">главная страница</a></li>
-            <li><a href="#fragmmeent">фрагмент вроде</a></li>
+            <li><a href="#fio">фрагмент вроде</a></li>
             <li><a href="?name=Тёма&cool=True&age=18534">ссылка с 3 параметрами</a></li>
             <li><a href="?id=52">ссылка с id</a></li>
             <li><a href="./vnutr.html">относительная ссылка в текущем каталоге</a></li>
@@ -118,7 +118,7 @@
     <div class="form">
         <h2>Форма</h2>
         <form>
-            <label>ФИО <input name="fio" type="text"></label>
+            <label>ФИО <input name="fio" type="text" id="fio"></label>
             <label>Телефон <input name="phone" type="tel"></label>
             <label>Email <input name="email" type="email"></label>
             <label>Дата рождения <input name="date" type="date"></label>
@@ -130,7 +130,7 @@
             <input type="radio" id="female" name="gender" value="female"><br>
 
             <label>Любимый язык программирования
-                <select name="lang" multiple>
+                <select name="lang[]" multiple>
                     <option value="1">Pascal</option>
                     <option value="2">C</option>
                     <option value="3">C++</option>
