@@ -75,7 +75,9 @@ td, th {
 border: 1px solid #000;
 padding: 10px;
 }
-
+.blue-cell {
+    background-color: #ADD8E6;
+}
 /*Media Queries*/
 
 /* Планшеты и ПК */
