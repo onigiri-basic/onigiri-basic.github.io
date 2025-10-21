@@ -32,8 +32,7 @@
         <table>
             <thead>
                 <tr>
-                    <td class="tab">Level 1</td>
-                    <td>Level 2</td>
+                    <td class="tab" colspan="2">Level 1 + Level 2</td>
                     <td class="tab">Level 3</td>
                     <td>Level 4</td>
                     <td class="tab">Level 5</td>
@@ -41,35 +40,35 @@
             </thead>
             <tbody>
                 <tr>
-                    <td class="tab" rowspan="6">blue</td>
+                    <td class="tab blue-cell" rowspan="6">blue</td>
                     <td rowspan="3">test</td>
-                    <td class="tab" rowspan="3">blue</td>
+                    <td class="tab blue-cell" rowspan="3">blue</td>
                     <td>test</td>
-                    <td class="tab">blue</td>
+                    <td class="tab blue-cell">blue</td>
                 </tr>
                 <tr>
                     <td>test</td>
-                    <td class="tab">blue</td>
+                    <td class="tab blue-cell">blue</td>
                 </tr>
                 <tr>
                     <td>test</td>
-                    <td class="tab">blue</td>
+                    <td class="tab blue-cell">blue</td>
                 </tr>
                 <tr>
                     <td>test</td>
-                    <td class="tab">blue</td>
+                    <td class="tab blue-cell">blue</td>
                     <td>test</td>
-                    <td class="tab">blue</td>
+                    <td class="tab blue-cell">blue</td>
                 </tr>
                 <tr>
                     <td rowspan="2">test</td>
-                    <td class="tab" rowspan="2">blue</td>
+                    <td class="tab blue-cell" rowspan="2">blue</td>
                     <td>test</td>
-                    <td class="tab">blue</td>
+                    <td class="tab blue-cell">blue</td>
                 </tr>
                 <tr>
                     <td>test</td>
-                    <td class="tab">blue</td>
+                    <td class="tab blue-cell">blue</td>
                 </tr>
             </tbody>
         </table>
@@ -84,7 +83,7 @@
             <li><a href=""><img src="image.jpg" alt="image" width="200"></a></li>
             <li><a href="/vnutr.html">внутренняя страница</a></li>
             <li><a href="/">главная страница</a></li>
-            <li><a href="#fio">фрагмент вроде</a></li>
+            <li><a href="#fio">фрагмент ФИО</a></li>
             <li><a href="?name=Тёма&cool=True&age=18534">ссылка с 3 параметрами</a></li>
             <li><a href="?id=52">ссылка с id</a></li>
             <li><a href="./vnutr.html">относительная ссылка в текущем каталоге</a></li>
@@ -130,7 +129,7 @@
             <input type="radio" id="female" name="gender" value="female"><br>
 
             <label>Любимый язык программирования
-                <select name="lang[]" multiple>
+                <select id="lang" name="lang[]" multiple>
                     <option value="1">Pascal</option>
                     <option value="2">C</option>
                     <option value="3">C++</option>
