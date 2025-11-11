@@ -1,106 +1,41 @@
-/* Сбросы и базовые стили */
-body {
-margin: 0;
-font-family: Arial, sans-serif;
+/* style.css - Дополнительные стили для Bootstrap */
+
+/* Стиль для голубых ячеек таблицы */
+.bg-light-blue {
+    background-color: #ADD8E6 !important;
 }
 
-p, li {
-margin: 5px 0;
+/* Дополнительные кастомные стили */
+.table-container table {
+    font-size: 0.9rem;
 }
 
-header {
-background-color: #1E90FF;
-padding: 20px;
-margin-bottom: 20px;
-color: white;
+.links ul li {
+    margin-bottom: 0.5rem;
 }
 
-.logo {
-font-weight: bold;
+/* Адаптивность изображений */
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
-footer {
-margin-top: 40px;
-background-color: #1E90FF;
-padding: 15px;
-font-weight: bold;
-color: white;
+/* Mobile First - дополнительные настройки для мобильных устройств */
+@media (max-width: 768px) {
+    .table-responsive {
+        font-size: 0.8rem;
+    }
+    
+    .form .btn {
+        width: 100%;
+    }
 }
 
-/* Навигация — Mobile First */
-.nav {
-list-style: none;
-padding: 0;
-margin: 0;
-display: flex;
-flex-direction: column; /* вертикально на мобилках */
-}
-
-.nav li {
-margin: 8px 0;
-}
-
-.nav a {
-color: white;
-font-weight: bold;
-text-decoration: none;
-}
-/*.tab a {
-color: blue;*/
-/* Основной блок */
-.main {
-display: flex;
-flex-direction: column; /* на мобилках — столбец */
-gap: 15px;
-padding: 10px;
-}
-
-.table-container {
-order: 1; /* таблица выше списка */
-}
-.links {
-order: 2;
-}
-.form {
-order: 3;
-}
-
-table {
-border-collapse: collapse;
-width: 100%;
-}
-td, th {
-border: 1px solid #000;
-padding: 10px;
-}
-.blue-cell {
-    background-color: #ADD8E6;
-}
-/*Media Queries*/
-
-/* Планшеты и ПК */
-@media (min-width: 768px) {
-.nav {
-display: flex;
-flex-direction: row; /* горизонтально */
-justify-content: flex-end;
-gap: 20px;
-}
-
-.header {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.main {
-flex-direction: row; /* три колонки */
-justify-content: space-between;
-}
-
-.table-container, .links, .form {
-flex: 1;
-margin: 10px;
-}
+/* Улучшение внешнего вида для десктопов */
+@media (min-width: 992px) {
+    .table-container,
+    .links,
+    .form {
+        height: fit-content;
+    }
 }
