@@ -1,41 +1,168 @@
-/* style.css - Дополнительные стили для Bootstrap */
-
-/* Стиль для голубых ячеек таблицы */
-.bg-light-blue {
-    background-color: #ADD8E6 !important;
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
 }
 
-/* Дополнительные кастомные стили */
-.table-container table {
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+    padding: 20px;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+    border-bottom: 2px solid #4a6fa5;
+}
+
+h1 {
+    color: #2c3e50;
+    font-size: 2.5rem;
+}
+
+.calculator {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: #2c3e50;
+}
+
+select, input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+select:focus, input:focus {
+    outline: none;
+    border-color: #4a6fa5;
+    box-shadow: 0 0 0 2px rgba(74, 111, 165, 0.2);
+}
+
+button {
+    background-color: #4a6fa5;
+    color: white;
+    border: none;
+    padding: 14px 24px;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #3a5a80;
+}
+
+button:active {
+    transform: translateY(1px);
+}
+
+.result {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #e8f4fd;
+    border-radius: 8px;
+    border-left: 4px solid #4a6fa5;
+}
+
+.result h2 {
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-size: 1.5rem;
+}
+
+.result-output {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c3e50;
+    padding: 10px;
+    min-height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    border-radius: 4px;
+    border: 1px dashed #4a6fa5;
+}
+
+.error-message {
+    color: #e74c3c;
     font-size: 0.9rem;
+    margin-top: 5px;
+    min-height: 20px;
 }
 
-.links ul li {
-    margin-bottom: 0.5rem;
+.info {
+    background-color: #f0f7ff;
+    padding: 20px;
+    border-radius: 8px;
+    margin-top: 20px;
 }
 
-/* Адаптивность изображений */
-.img-fluid {
-    max-width: 100%;
-    height: auto;
+.info h3 {
+    color: #2c3e50;
+    margin-bottom: 10px;
 }
 
-/* Mobile First - дополнительные настройки для мобильных устройств */
-@media (max-width: 768px) {
-    .table-responsive {
-        font-size: 0.8rem;
+.info ol {
+    padding-left: 20px;
+}
+
+.info li {
+    margin-bottom: 8px;
+}
+
+footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9rem;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .container {
+        padding: 15px;
     }
     
-    .form .btn {
-        width: 100%;
+    h1 {
+        font-size: 2rem;
     }
-}
-
-/* Улучшение внешнего вида для десктопов */
-@media (min-width: 992px) {
-    .table-container,
-    .links,
-    .form {
-        height: fit-content;
+    
+    .calculator {
+        padding: 15px;
     }
 }
