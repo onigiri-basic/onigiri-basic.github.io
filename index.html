@@ -37,18 +37,12 @@
                             placeholder="Введите количество"
                             required
                         >
-                        <div id="errorMessage" class="error-message" aria-live="polite"></div>
                     </div>
                     
                     <div class="form-group">
                         <button type="button" id="calculateBtn">Рассчитать стоимость</button>
                     </div>
                 </form>
-                
-                <div class="result" id="resultContainer">
-                    <h2>Результат расчета</h2>
-                    <div id="resultOutput" class="result-output">Здесь будет отображена стоимость заказа</div>
-                </div>
             </div>
             
             <div class="info">
@@ -57,6 +51,7 @@
                     <li>Выберите товар из списка</li>
                     <li>Введите количество товара (только целые положительные числа)</li>
                     <li>Нажмите кнопку "Рассчитать стоимость"</li>
+                    <li>Результат появится во всплывающем окне (alert)</li>
                 </ol>
             </div>
         </main>
