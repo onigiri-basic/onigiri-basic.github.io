@@ -1,0 +1,63 @@
+{
+  "serviceTypes": [
+    {
+      "id": "basic",
+      "name": "Базовая разработка",
+      "basePrice": 500,
+      "description": "Простая верстка HTML/CSS без дополнительных функций. Подходит для простых сайтов-визиток.",
+      "hasOptions": false,
+      "hasProperty": false
+    },
+    {
+      "id": "standard",
+      "name": "Стандартная разработка",
+      "basePrice": 800,
+      "description": "Разработка с использованием JavaScript и базовой функциональностью. Включает базовую анимацию и интерактивные элементы.",
+      "hasOptions": true,
+      "hasProperty": false,
+      "options": [
+        {
+          "id": "none",
+          "name": "Без дополнительных опций",
+          "price": 0,
+          "description": "Стандартный набор функций"
+        },
+        {
+          "id": "responsive",
+          "name": "Адаптивная верстка",
+          "price": 200,
+          "description": "Поддержка мобильных устройств и планшетов"
+        },
+        {
+          "id": "seo",
+          "name": "SEO-оптимизация",
+          "price": 300,
+          "description": "Оптимизация для поисковых систем Google, Яндекс"
+        },
+        {
+          "id": "cms",
+          "name": "Интеграция с CMS",
+          "price": 400,
+          "description": "Интеграция с системой управления контентом (WordPress, Joomla)"
+        }
+      ]
+    },
+    {
+      "id": "premium",
+      "name": "Премиум разработка",
+      "basePrice": 1200,
+      "description": "Полнофункциональная разработка с индивидуальным дизайном. Включает сложную анимацию, интеграции с API и персонализацию.",
+      "hasOptions": false,
+      "hasProperty": true,
+      "property": {
+        "id": "urgent",
+        "name": "Срочный заказ",
+        "description": "Выполнение работы в сжатые сроки",
+        "multiplier": 1.3
+      }
+    }
+  ],
+  "defaultQuantity": 1,
+  "currency": "руб.",
+  "note": "Цены указаны за одну страницу/экран"
+}
