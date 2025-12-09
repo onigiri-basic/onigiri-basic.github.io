@@ -131,3 +131,219 @@ footer {
         padding: 15px;
     }
 }
+
+.radio-group {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 5px;
+}
+
+.radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.radio-label:hover {
+    background-color: #f0f7ff;
+}
+
+.radio-label input[type="radio"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    padding: 8px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.checkbox-label:hover {
+    background-color: #f0f7ff;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 10px;
+    width: auto;
+}
+
+.result {
+    margin-top: 30px;
+    padding: 20px;
+    background-color: #f0f7ff;
+    border-radius: 8px;
+    text-align: center;
+    border: 2px solid #4a6fa5;
+}
+
+.result h3 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+}
+
+.price {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #2c3e50;
+    animation: priceUpdate 0.5s ease;
+}
+
+@keyframes priceUpdate {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.1);
+        color: #4a6fa5;
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.info ul {
+    padding-left: 20px;
+    margin-top: 10px;
+}
+
+.info li {
+    margin-bottom: 8px;
+}
+
+/* Адаптивность - дополнительные стили */
+@media (max-width: 600px) {
+    .radio-group {
+        gap: 8px;
+    }
+    
+    .price {
+        font-size: 2rem;
+    }
+}
+/* Стиль для информации о услугах */
+#serviceFeatures li {
+    margin-bottom: 10px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border-left: 3px solid #4a6fa5;
+}
+
+/* Индикатор загрузки */
+.loading {
+    opacity: 0.7;
+    pointer-events: none;
+}
+
+.loading::after {
+    content: "Загрузка...";
+    display: block;
+    text-align: center;
+    padding: 10px;
+    color: #4a6fa5;
+}
+/* Стили для отображения особенностей услуг */
+#serviceFeatures {
+    list-style-type: none;
+    padding-left: 0;
+    margin-top: 15px;
+}
+
+.service-feature-item {
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    border-left: 4px solid #4a6fa5;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.service-feature-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.service-feature-item strong {
+    color: #2c3e50;
+    font-size: 1.1rem;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.service-features-details {
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e9ecef;
+}
+
+.service-features-details > div {
+    margin-bottom: 8px;
+    padding-left: 20px;
+    position: relative;
+}
+
+.service-features-details > div:before {
+    position: absolute;
+    left: 0;
+    top: 2px;
+}
+
+.options-list {
+    list-style-type: none;
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.options-list li {
+    margin-bottom: 5px;
+    padding: 4px 8px;
+    background-color: #e9ecef;
+    border-radius: 4px;
+    font-size: 0.9rem;
+}
+
+.multiplier-info {
+    color: #e74c3c;
+    font-weight: 600;
+    background-color: #ffeaea;
+    padding: 5px 10px;
+    border-radius: 4px;
+    display: inline-block;
+    margin-top: 5px;
+}
+
+.loading-info {
+    text-align: center;
+    color: #7f8c8d;
+    font-style: italic;
+    padding: 20px;
+}
+
+/* Иконки для маркеров */
+.service-features-details > div:nth-child(1):before { content: "💵"; }
+.service-features-details > div:nth-child(2):before { content: "✅"; }
+.service-features-details > div:nth-child(3):before { content: "✅"; }
+
+/* Адаптивность */
+@media (max-width: 600px) {
+    .service-feature-item {
+        padding: 12px;
+    }
+    
+    .service-feature-item strong {
+        font-size: 1rem;
+    }
+    
+    .options-list {
+        padding-left: 10px;
+    }
+}
