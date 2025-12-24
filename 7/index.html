@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Галерея изображений с миниатюрами</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            color: #333;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+
+        .gallery-container {
+            max-width: 1000px;
+            width: 100%;
+            margin: 20px auto;
+            position: relative;
+            overflow: hidden;
+            border-radius: 16px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            background-color: white;
+            padding: 25px;
+        }
+
+        .gallery-title {
+            text-align: center;
+            margin-bottom: 25px;
+            color: #2c3e50;
+            font-weight: 700;
+            font-size: 28px;
+            position: relative;
+        }
+
+        .gallery-title::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(to right, #3498db, #2c3e50);
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+
+        .gallery {
+            display: flex;
+            transition: transform 0.5s ease;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .gallery-item {
+            flex: 0 0 calc(33.333% - 10px);
+            height: 280px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.12);
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            position: relative;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 20px rgba(0, 0, 0, 0.18);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        .arrow {
+            background: linear-gradient(to right, #3498db, #2980b9);
+            color: white;
+            border: none;
+            width: 55px;
+            height: 55px;
+            border-radius: 50%;
+            font-size: 22px;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .arrow:hover {
+            transform: scale(1.08);
+            box-shadow: 0 7px 18px rgba(0, 0, 0, 0.2);
+        }
+
+        .arrow:active {
+            transform: scale(0.95);
+        }
+
+        .pager {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 25px;
+            font-size: 18px;
+            color: #555;
+        }
+
+        .pager span {
+            font-weight: 700;
+            color: #2c3e50;
+            background: #f8f9fa;
+            padding: 5px 15px;
+            border-radius: 20px;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .thumbnails {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            margin-top: 15px;
+            flex-wrap: wrap;
+        }
+
+        .thumbnail {
+            width: 70px;
+            height: 50px;
+            border-radius: 10px;
+            overflow: hidden;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+            opacity: 0.7;
+            border: 2px solid transparent;
+        }
+
+        .thumbnail:hover {
+            transform: scale(1.1);
+            opacity: 0.9;
+        }
+
+        .thumbnail.active {
+            opacity: 1;
+            border: 2px solid #3498db;
+            transform: scale(1.1);
+            box-shadow: 0 5px 12px rgba(52, 152, 219, 0.4);
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Адаптивность для мобильных устройств */
+        @media (max-width: 768px) {
+            .gallery-item {
+                flex: 0 0 100%;
+                height: 240px;
+            }
+            
+            .gallery-container {
+                padding: 20px;
+            }
+            
+            .arrow {
+                width: 50px;
+                height: 50px;
+            }
+            
+            .thumbnail {
+                width: 60px;
+                height: 45px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .gallery-item {
+                height: 200px;
+            }
+            
+            .arrow {
+                width: 45px;
+                height: 45px;
+                font-size: 20px;
+            }
+            
+            .thumbnail {
+                width: 50px;
+                height: 40px;
+            }
+            
+            .gallery-title {
+                font-size: 24px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="gallery-container">
+        <h2 class="gallery-title">Галерея изображений</h2>
+        <div class="gallery">
+            <!-- Изображения будут добавлены через JavaScript -->
+        </div>
+        <div class="navigation">
+            <button class="arrow prev">&#10094;</button>
+            <button class="arrow next">&#10095;</button>
+        </div>
+        <div class="pager">
+            Страница: <span id="current-page">1</span> из <span id="total-pages">3</span>
+        </div>
+        <div class="thumbnails">
+            <!-- Миниатюры будут добавлены через JavaScript -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const gallery = document.querySelector('.gallery');
+            const prevButton = document.querySelector('.prev');
+            const nextButton = document.querySelector('.next');
+            const currentPageElement = document.getElementById('current-page');
+            const totalPagesElement = document.getElementById('total-pages');
+            const thumbnailsContainer = document.querySelector('.thumbnails');
+            
+            // Массив с URL изображений
+            const imageUrls = [
+                'фото1.jpg',
+                'фото2.jpg',
+                'фото3.jpg',
+                'фото4.jpg',
+                'фото5.jpg',
+                'фото6.jpg',
+                'фото7.jpg',
+                'фото8.jpg',
+				
+            ];
+            
+            // Создаем элементы изображений
+            imageUrls.forEach((url, index) => {
+                const item = document.createElement('div');
+                item.className = 'gallery-item';
+                item.dataset.index = index;
+                
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = `Изображение ${index + 1}`;
+                
+                item.appendChild(img);
+                gallery.appendChild(item);
+            });
+            
+            // Создаем миниатюры
+            imageUrls.forEach((url, index) => {
+                const thumbnail = document.createElement('div');
+                thumbnail.className = 'thumbnail';
+                if (index === 0) thumbnail.classList.add('active');
+                thumbnail.dataset.index = index;
+                
+                const img = document.createElement('img');
+                img.src = url;
+                img.alt = `Миниатюра ${index + 1}`;
+                
+                thumbnail.appendChild(img);
+                thumbnailsContainer.appendChild(thumbnail);
+                
+                // Обработчик клика на миниатюру
+                thumbnail.addEventListener('click', function() {
+                    const index = parseInt(this.dataset.index);
+                    goToImage(index);
+                });
+            });
+            
+            // Определяем количество видимых изображений
+            let visibleItems;
+            function updateVisibleItems() {
+                if (window.innerWidth <= 768) {
+                    visibleItems = 1;
+                } else {
+                    visibleItems = 3;
+                }
+                updateTotalPages();
+            }
+            
+            // Обновляем общее количество страниц
+            function updateTotalPages() {
+                const totalPages = Math.ceil(imageUrls.length / visibleItems);
+                totalPagesElement.textContent = totalPages;
+            }
+            
+            // Инициализация
+            updateVisibleItems();
+            
+            let currentPage = 1;
+            let currentImageIndex = 0;
+            
+            // Функция для обновления позиции галереи
+            function updateGalleryPosition() {
+                const itemWidth = gallery.children[0].offsetWidth + 15; // width + gap
+                const translateX = -(currentPage - 1) * visibleItems * itemWidth;
+                gallery.style.transform = `translateX(${translateX}px)`;
+                currentPageElement.textContent = currentPage;
+                
+                // Обновляем активную миниатюру
+                updateActiveThumbnail();
+            }
+            
+            // Функция для перехода к определенному изображению
+            function goToImage(index) {
+                currentImageIndex = index;
+                currentPage = Math.floor(index / visibleItems) + 1;
+                updateGalleryPosition();
+            }
+            
+            // Функция для обновления активной миниатюры
+            function updateActiveThumbnail() {
+                const thumbnails = document.querySelectorAll('.thumbnail');
+                thumbnails.forEach(thumb => {
+                    thumb.classList.remove('active');
+                    if (parseInt(thumb.dataset.index) === currentImageIndex) {
+                        thumb.classList.add('active');
+                    }
+                });
+            }
+            
+            // Обработчики событий для кнопок
+            prevButton.addEventListener('click', function() {
+                if (currentPage > 1) {
+                    currentPage--;
+                    currentImageIndex = (currentPage - 1) * visibleItems;
+                    updateGalleryPosition();
+                }
+            });
+            
+            nextButton.addEventListener('click', function() {
+                const totalPages = Math.ceil(imageUrls.length / visibleItems);
+                if (currentPage < totalPages) {
+                    currentPage++;
+                    currentImageIndex = (currentPage - 1) * visibleItems;
+                    updateGalleryPosition();
+                }
+            });
+            
+            // Обновляем при изменении размера окна
+            window.addEventListener('resize', function() {
+                updateVisibleItems();
+                currentPage = Math.floor(currentImageIndex / visibleItems) + 1;
+                updateGalleryPosition();
+            });
+            
+            // Инициализация позиции галереи
+            updateGalleryPosition();
+        });
+    </script>
+</body>
+</html>
