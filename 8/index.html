@@ -438,7 +438,6 @@
                     <!-- Кнопка для десктопной версии -->
                     <button type="submit" class="submit-btn-desktop" id="submitBtnDesktop">
                         <span id="submitTextDesktop">Отправить сообщение</span>
-                        <span id="submitLoadingDesktop" class="loading hidden"></span>
                     </button>
                 </form>
             </div>
@@ -447,7 +446,6 @@
         <!-- Кнопка для мобильной версии - ВНЕ формы, фиксированная -->
         <button type="submit" class="submit-btn-mobile hidden" id="submitBtnMobile" form="feedbackForm">
             <span id="submitTextMobile">Отправить сообщение</span>
-            <span id="submitLoadingMobile" class="loading hidden"></span>
         </button>
     </div>
 
@@ -468,6 +466,11 @@
         const submitLoadingDesktop = document.getElementById('submitLoadingDesktop');
         const submitLoadingMobile = document.getElementById('submitLoadingMobile');
         const phoneInput = document.getElementById('phone');
+        const fullName = document.getElementById('fullName');
+        const email = document.getElementById('email');
+        const phone = document.getElementById('phone');
+        const organization = document.getElementById('organization');
+        const message = document.getElementById('message');
 
         // Открытие формы
         function openForm() {
@@ -704,19 +707,21 @@
             submitBtnMobile.disabled = true;
             submitTextDesktop.classList.add('hidden');
             submitTextMobile.classList.add('hidden');
-            submitLoadingDesktop.classList.remove('hidden');
-            submitLoadingMobile.classList.remove('hidden');
             hideMessage();
 
             try {
-                const formData = new FormData(form);
-                
                 const response = await fetch(FORM_URL, {
                     method: 'POST',
-                    body: JSON.stringify(formData);
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Accept': 'application/json'
+                    },
+                    body: JSON.stringify({ name: fullName.value, email: email.value, message: message.value }),
                 });
 
                 const result = await response.json();
+
+                console.log(result);
 
                 if (response.ok && result.code === 200) {
                     showMessage('✅ Ваше сообщение успешно отправлено! Мы свяжемся с вами в ближайшее время.', 'success');
@@ -791,7 +796,7 @@
                 openForm();
             }
             
-            if (FORMCARRY_FORM_ID != "YOUR_FORMCARRY_FORM_ID") {
+            if (FORMCARRY_FORM_ID != "JybBxl2TtJ2") {
                 showMessage('⚠️ Для работы формы замените FORMCARRY_FORM_ID на ваш реальный Form ID от formcarry.com', 'error');
             }
         });
