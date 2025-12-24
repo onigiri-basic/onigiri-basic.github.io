@@ -713,7 +713,7 @@
                 
                 const response = await fetch(FORM_URL, {
                     method: 'POST',
-                    body: formData
+                    body: JSON.stringify(formData);
                 });
 
                 const result = await response.json();
